@@ -41,19 +41,27 @@ header {
   border-bottom: 1px solid var(--text);
 }
 
-/* .hero {
+header a {
+  text-decoration: none;
+}
+
+.hero {
   color: var(--text);
   background-color: var(--background);
-} */
+}
 
-/* .hero-span {
+.hero-span {
   color: var(--background);
   background-color: var(--text);
-} */
+  padding: 0px 0.5px;
+}
 
 .hero-container {
-  padding-top: 5px;
-  width: 144px;
+  /* padding-top: 5px; */
+  /* width: 144px; */
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .hero {
@@ -68,8 +76,9 @@ header {
 }
 
 .theme-icon {
-  width: 24px;
+  width: 32px;
   cursor: pointer;
+  color: var(--text);
 }
 
 .menu-container {
@@ -98,8 +107,9 @@ header {
 }
 
 .menu {
-  width: 24px;
+  width: 32px;
   cursor: pointer;
+  color: var(--text);
 }
 
 .active-link, a:hover {
