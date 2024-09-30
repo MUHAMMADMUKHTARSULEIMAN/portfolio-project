@@ -48,9 +48,9 @@ export default function Layout() {
           </div> :
           <div className="desktop-nav">
             {
-            darkTheme ?
-            <Sun onClick={switchTheme} className="theme-icon" strokeWidth={1.25}/> :
-            <Moon onClick={switchTheme} className="theme-icon" strokeWidth={1.25}/>
+            darkTheme
+            ? <Sun onClick={switchTheme} className="theme-icon" strokeWidth={1.25}/>
+            : <Moon onClick={switchTheme} className="theme-icon" strokeWidth={1.25}/>
             }
             <NavLink className={({isActive}) => isActive ? "active-link" : ""} to="/about">
               <p>ABOUT</p>

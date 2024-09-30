@@ -41,7 +41,7 @@ export default function Projects() {
                     <div className="project-info">
                       <h1>{project.name}</h1>
                       <p>{project.description}</p>
-                      <Link to={project.link} target="_blank" rel="noopener noreferrer"><div className="project-cta">Check it out</div></Link>
+                      <Link to={project.link} target="_blank" rel="noopener noreferrer"><div className="project-cta">Check it out &rarr;</div></Link>
                     </div>
                   </div>
                   :
