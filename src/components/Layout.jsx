@@ -54,13 +54,13 @@ export default function Layout() {
             : <Moon onClick={switchTheme} className="theme-icon"/>
             }
             <NavLink className={({isActive}) => isActive ? "active-link" : ""} to="/about">
-              <p>ABOUT</p>
+              <p className="nav-menu-animator">ABOUT</p>
             </NavLink>
             <NavLink className={({isActive}) => isActive ? "active-link" : ""} to="projects">
-              <p>PROJECTS</p>
+              <p className="nav-menu-animator">PROJECTS</p>
               </NavLink>
             <NavLink className={({isActive}) => isActive ? "active-link" : ""} to="contact">
-              <p>CONTACT</p>
+              <p className="nav-menu-animator">CONTACT</p>
               </NavLink>
           </div>        
         }
