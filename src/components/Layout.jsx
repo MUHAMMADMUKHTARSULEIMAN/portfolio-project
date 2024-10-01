@@ -2,7 +2,7 @@ import { useEffect} from "react"
 import {NavLink, Outlet} from "react-router-dom"
 import { useState } from "react"
 import useLocalStorage from "use-local-storage"
-import { Menu, Moon, Sun, X } from "lucide-react"
+import {Moon, Sun,} from "lucide-react"
 
 export default function Layout() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -41,9 +41,10 @@ export default function Layout() {
               <Moon onClick={switchTheme} className="theme-icon"/>
             }
             {
-              !menu ? <Menu onClick={toggleMenu} className="menu"/>
-              :
-              <X onClick={toggleMenu} className="menu"/>
+              <div onClick={toggleMenu} className={!menu ? "menu-div" : "menu-div-opened"}>
+                <div className="div-1"></div>
+                <div className="div-2"></div>
+              </div>
             }
           </div> :
           <div className="desktop-nav">
