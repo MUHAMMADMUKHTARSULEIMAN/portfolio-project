@@ -14,17 +14,21 @@ export default function Layout() {
   }, []);
 
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
   const [darkTheme, setTheme] = useLocalStorage("dark-theme", defaultDark ? true : false);
+  
   const [menu, setMenu] = useState(false)
+
   const toggleMenu = () => {
     setMenu(menu => !menu)
   }
+
   const switchTheme = () => {
     setTheme(darkTheme => !darkTheme)
   }
 
   return (
-    <div data-theme={darkTheme}>
+    <div data-theme={darkTheme} className="layout-container">
       <header className="header">
         <NavLink to="/" onClick={menu ? toggleMenu : ""}>
           <div className="hero-container">
@@ -54,13 +58,13 @@ export default function Layout() {
             : <Moon onClick={switchTheme} className="theme-icon"/>
             }
             <NavLink className={({isActive}) => isActive ? "active-link" : ""} to="/about">
-              <p className="nav-menu-animator">ABOUT</p>
+              <p className="desktop-nav-animator">ABOUT</p>
             </NavLink>
             <NavLink className={({isActive}) => isActive ? "active-link" : ""} to="projects">
-              <p className="nav-menu-animator">PROJECTS</p>
+              <p className="desktop-nav-animator">WORK</p>
               </NavLink>
             <NavLink className={({isActive}) => isActive ? "active-link" : ""} to="contact">
-              <p className="nav-menu-animator">CONTACT</p>
+              <p className="desktop-nav-animator">CONTACT</p>
               </NavLink>
           </div>        
         }
@@ -69,15 +73,15 @@ export default function Layout() {
         <div className="menu-container-container">
           <div className="menu-container">
             <NavLink onClick={menu ? toggleMenu : ""} className={({isActive}) => isActive ? "active-link" : ""} to="/about">
-              <p className="nav-menu-animator">ABOUT</p>
+              <p className="mobile-nav-animator">ABOUT</p>
             </NavLink>
-            <hr className="nav-menu-animator"/>
+            <hr className="mobile-nav-animator"/>
             <NavLink onClick={menu ? toggleMenu : ""} className={({isActive}) => isActive ? "active-link" : ""} to="projects">
-              <p className="nav-menu-animator">PROJECTS</p>
+              <p className="mobile-nav-animator">WORK</p>
             </NavLink>
-            <hr className="nav-menu-animator"/>
+            <hr className="mobile-nav-animator"/>
             <NavLink onClick={menu ? toggleMenu : ""} className={({isActive}) => isActive ? "active-link" : ""} to="contact">
-              <p className="nav-menu-animator">CONTACT</p>
+              <p className="mobile-nav-animator">CONTACT</p>
             </NavLink>
           </div>
         </div>
