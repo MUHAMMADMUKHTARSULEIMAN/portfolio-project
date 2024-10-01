@@ -6,6 +6,7 @@ import {
   useLoaderData
 } from "react-router-dom"
 import { getProjects } from "../api";
+import { Loader } from "lucide-react";
 
 export async function loader() {
   return defer({projects: getProjects()})
@@ -28,7 +29,7 @@ export default function Projects() {
         <p>Stuff I did.</p>
       </div>
 
-      <Suspense fallback={<div className="loading-header"></div>}>
+      <Suspense fallback={<div className="loading-header"><Loader className="rotate"/></div>}>
         <Await resolve={data.projects}>
           {projects => {
             const projectsMap = projects.map(project => {

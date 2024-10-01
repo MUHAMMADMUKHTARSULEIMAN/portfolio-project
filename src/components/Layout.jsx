@@ -36,21 +36,21 @@ export default function Layout() {
           <div className="mobile-nav">
             {
               darkTheme ?
-              <Sun onClick={switchTheme} className="theme-icon" strokeWidth={1.25}/>
+              <Sun onClick={switchTheme} className="theme-icon"/>
               :
-              <Moon onClick={switchTheme} className="theme-icon" strokeWidth={1.25}/>
+              <Moon onClick={switchTheme} className="theme-icon"/>
             }
             {
-              !menu ? <Menu onClick={toggleMenu} className="menu" strokeWidth={1.25}/>
+              !menu ? <Menu onClick={toggleMenu} className="menu"/>
               :
-              <X onClick={toggleMenu} className="menu" strokeWidth={1.25}/>
+              <X onClick={toggleMenu} className="menu"/>
             }
           </div> :
           <div className="desktop-nav">
             {
             darkTheme
-            ? <Sun onClick={switchTheme} className="theme-icon" strokeWidth={1.25}/>
-            : <Moon onClick={switchTheme} className="theme-icon" strokeWidth={1.25}/>
+            ? <Sun onClick={switchTheme} className="theme-icon"/>
+            : <Moon onClick={switchTheme} className="theme-icon"/>
             }
             <NavLink className={({isActive}) => isActive ? "active-link" : ""} to="/about">
               <p>ABOUT</p>
