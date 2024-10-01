@@ -66,18 +66,20 @@ export default function Layout() {
         }
       </header>
       {menu && windowWidth < 750 &&
-        <div className="menu-container">
-          <NavLink onClick={menu ? toggleMenu : ""} className={({isActive}) => isActive ? "active-link" : ""} to="/about">
-            <p>ABOUT</p>
-          </NavLink>
-          <hr/>
-          <NavLink onClick={menu ? toggleMenu : ""} className={({isActive}) => isActive ? "active-link" : ""} to="projects">
-            <p>PROJECTS</p>
-          </NavLink>
-          <hr/>
-          <NavLink onClick={menu ? toggleMenu : ""} className={({isActive}) => isActive ? "active-link" : ""} to="contact">
-            <p>CONTACT</p>
-          </NavLink>
+        <div className="menu-container-container">
+          <div className="menu-container">
+            <NavLink onClick={menu ? toggleMenu : ""} className={({isActive}) => isActive ? "active-link" : ""} to="/about">
+              <p className="nav-menu-animator">ABOUT</p>
+            </NavLink>
+            <hr className="nav-menu-animator"/>
+            <NavLink onClick={menu ? toggleMenu : ""} className={({isActive}) => isActive ? "active-link" : ""} to="projects">
+              <p className="nav-menu-animator">PROJECTS</p>
+            </NavLink>
+            <hr className="nav-menu-animator"/>
+            <NavLink onClick={menu ? toggleMenu : ""} className={({isActive}) => isActive ? "active-link" : ""} to="contact">
+              <p className="nav-menu-animator">CONTACT</p>
+            </NavLink>
+          </div>
         </div>
       }
       {menu && windowWidth < 750 ? "" : <div className="outlet"><Outlet/></div>}
